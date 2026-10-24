@@ -57,9 +57,9 @@ int main()
     
     bool bIsNewWord = true;
     
-    for (size_t i = 0; i < String.size(); i++)
+    for (char& i : String)
     {
-        if (String[i] == ' ')
+        if (i == ' ')
         {
             bIsNewWord = true;
             continue;
@@ -67,18 +67,18 @@ int main()
         
         if (bIsNewWord)
         {
-            if (String[i] >= 'a' && String[i] <= 'z')
+            if (i >= 'a' && i <= 'z')
             {
-                String[i] -= 32;
+                i -= 32;
             }
             
             bIsNewWord = false;
         }
         else
         {
-            if (String[i] >= 'A' && String[i] <= 'Z')
+            if (i >= 'A' && i <= 'Z')
             {
-                String[i] += 32;
+                i += 32;
             }
         }
     }
